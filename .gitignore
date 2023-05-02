@@ -4,6 +4,9 @@ node_modules/
 # testing
 coverage/
 
+# editors and IDE's
+.vscode/
+
 # next.js
 web/.next/
 web/out/
