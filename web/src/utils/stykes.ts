@@ -4,24 +4,26 @@ export type ClassValue =
   | undefined
   | boolean
   | string
-  | null;
+  | null
 
 export function clsx(...classValues: ClassValue[]) {
-  const classNames: string[] = [];
+  const classNames: string[] = []
 
   classValues.forEach((value) => {
     if (!value) {
-      return;
-    } else if (typeof value === 'string' && value.trim()) {
-      classNames.push(value);
+      return
+    }
+
+    if (typeof value === 'string' && value.trim()) {
+      classNames.push(value)
     } else if (Array.isArray(value)) {
-      classNames.push(clsx(value));
+      classNames.push(clsx(value))
     } else if (typeof value === 'object') {
       Object.entries(value).forEach(([value, condition]) => {
-        condition && classNames.push(value);
-      });
+        condition && classNames.push(value)
+      })
     }
-  });
+  })
 
-  return classNames.join(' ');
+  return classNames.join(' ')
 }

@@ -1,12 +1,13 @@
-import Image from 'next/image';
-import AboutSection from './(AboutSection)';
-import StatsSection from './(StatsSection)';
-import CallToAction from './(CallToAction)';
+import Image from 'next/image'
+
+import AboutSection from './(AboutSection)'
+import CallToAction from './(CallToAction)'
+import StatsSection from './(StatsSection)'
 
 export const metadata = {
   title: 'Home | Fam Müller',
   description: "Platform to tell Müller's story",
-};
+}
 
 export default function HomePage() {
   return (
@@ -32,5 +33,5 @@ export default function HomePage() {
 
       <CallToAction />
     </div>
-  );
+  )
 }

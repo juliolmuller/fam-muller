@@ -1,21 +1,22 @@
-'use client';
+'use client'
 
 import {
   ImagesSquare as ImagesSquareIcon,
   Scroll as ScrollIcon,
   UsersThree as UsersThreeIcon,
-} from '@phosphor-icons/react';
-import Image from 'next/image';
-import { floor } from '~/utils/math';
+} from '@phosphor-icons/react'
+import Image from 'next/image'
+
+import { floor } from '~/utils/math'
 
 namespace StatsSection {
   export type Props = {
-    documents?: number;
-    medias?: number;
-    members?: number;
-    photos?: number;
-    users?: number;
-  };
+    documents?: number
+    medias?: number
+    members?: number
+    photos?: number
+    users?: number
+  }
 }
 
 export default function StatsSection({
@@ -26,19 +27,19 @@ export default function StatsSection({
   users = 0,
 }: StatsSection.Props) {
   function truncateOverHundred(value: number) {
-    const isOver100 = value > 100;
-    const roundedValue = isOver100 ? floor(value, -2) : value;
-    const stringValue = roundedValue.toString().concat(isOver100 ? '+' : '');
-    return stringValue;
+    const isOver100 = value > 100
+    const roundedValue = isOver100 ? floor(value, -2) : value
+    const stringValue = roundedValue.toString().concat(isOver100 ? '+' : '')
+    return stringValue
   }
 
   return (
     <section id="stats" className="relative py-8">
-      <header className="mb-10 text-4xl text-center lg:text-left">
+      <header className="mb-10 text-center text-4xl lg:text-left">
         A História Sendo Escrita
       </header>
 
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-around gap-8">
+      <div className="flex flex-col-reverse items-center justify-around gap-8 lg:flex-row">
         <Image
           src="/family-tree.svg"
           alt="ilustração de árvore genealógica"
@@ -46,7 +47,7 @@ export default function StatsSection({
           width={320}
         />
 
-        <dl className="flex flex-wrap items-center gap-y-8 grow max-w-2xl">
+        <dl className="flex max-w-2xl grow flex-wrap items-center gap-y-8">
           <dt
             className="basis-1/6 text-brand-800"
             aria-label="qunatidade de membros"
@@ -82,5 +83,5 @@ export default function StatsSection({
         </dl>
       </div>
     </section>
-  );
+  )
 }
