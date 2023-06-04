@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 import Button from '~/components/button';
-import { Montserrat400, Pangolin400 } from '~/utils/fonts';
+import { montserratFont, pangolinFont } from '~/utils/fonts';
 
 namespace HomeLayout {
   export type Props = {
@@ -14,10 +14,10 @@ namespace HomeLayout {
 export default function HomeLayout({ children }: HomeLayout.Props) {
   return (
     <html lang="en">
-      <body id="root" className={`${Montserrat400.className} font-sans`}>
+      <body id="root" className={`${montserratFont.variable} ${pangolinFont.variable} font-sans`}>
         <header className="flex items-center justify-between gap-4 lg:container p-4 md:py-8">
           <Link
-            className={`inline-flex items-center gap-4 ${Pangolin400.className} text-5xl`}
+            className={'inline-flex items-center gap-4 font-brand text-5xl'}
             href="/#root"
           >
             <Image
