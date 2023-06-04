@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "@rocketseat/eslint-config/react"
+  ],
+  "plugins": [
+    "import-helpers"
+  ],
+  "rules": {
+    "@typescript-eslint/no-redeclare": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        },
+        "groups": [
+          "module",
+          [
+            "/^~//"
+          ],
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "newlinesBetween": "always"
+      }
+    ],
+    "no-redeclare": "off",
+    "no-unused-vars": "off"
+  }
 }
