@@ -10,7 +10,7 @@ module.exports = {
       center: true,
       screens: {
         xl: '1280px',
-      }
+      },
     },
     extend: {
       colors: {
@@ -31,7 +31,10 @@ module.exports = {
       fontFamily: {
         brand: 'var(--font-pangolin)',
         sans: 'var(--font-montserrat)',
-      }
+      },
+      minHeight: {
+        screen: ['100vh', '100svh'],
+      },
     },
   },
   plugins: [],
