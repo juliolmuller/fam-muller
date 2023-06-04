@@ -26,11 +26,11 @@ export default function RootLayout({ children }: RootLayout.Props) {
     <html lang="en">
       <body
         id="root"
-        className={`${montserratFont.variable} ${pangolinFont.variable} min-h-screen bg-gray-50 font-sans text-gray-950`}
+        className={`${montserratFont.variable} ${pangolinFont.variable} flex min-h-screen flex-col gap-8 bg-gray-50 font-sans text-gray-950`}
       >
         {children}
 
-        <footer className="mx-8 mt-8 flex h-24 items-center justify-center border-t border-t-gray-200 text-gray-600">
+        <footer className="mx-8 mt-auto flex h-24 items-center justify-center justify-self-end border-t border-t-gray-200 text-gray-600">
           <span>
             <strong>LacusSoft &copy;</strong> {new Date().getFullYear()} - All
             Rights Reserved

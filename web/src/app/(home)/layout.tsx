@@ -12,10 +12,10 @@ namespace HomeLayout {
 
 export default function HomeLayout({ children }: HomeLayout.Props) {
   return (
-    <>
-      <header className="flex items-center justify-between gap-4 p-4 lg:container md:py-8">
+    <div className="flex-1 lg:container">
+      <header className="flex items-center justify-between gap-4 p-4  md:py-8">
         <Link
-          className={'inline-flex items-center gap-4 font-brand text-5xl'}
+          className="inline-flex items-center gap-4 font-brand text-5xl"
           href="/#root"
         >
           <Image
@@ -37,11 +37,11 @@ export default function HomeLayout({ children }: HomeLayout.Props) {
             Recursos da Plataforma
           </Button>
 
-          <Button>Entrar</Button>
+          <Button href="/feed">Entrar</Button>
         </div>
       </header>
 
-      <main className="px-4 lg:container">{children}</main>
-    </>
+      <main className="px-4 ">{children}</main>
+    </div>
   )
 }
