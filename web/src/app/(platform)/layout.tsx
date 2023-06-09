@@ -28,15 +28,15 @@ export default function PlatformLayout({ children }: PlatformLayout.Props) {
           Müller
         </Link>
 
-        <Button href="/feed" variant="text">
+        <Button href="/feed" isNav variant="text">
           Feed
         </Button>
 
-        <Button href="/timeline" variant="text">
+        <Button href="/timeline" isNav variant="text">
           Linha do Tempo
         </Button>
 
-        <Button href="/tree" variant="text">
+        <Button href="/tree" isNav variant="text">
           Árvore Genealógica
         </Button>
       </header>
