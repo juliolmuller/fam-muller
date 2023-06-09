@@ -1,10 +1,8 @@
-'use client'
-
 namespace AboutSection {
   export type Props = {}
 }
 
-export default function AboutSection({}: AboutSection.Props) {
+export default function AboutSection() {
   return (
     <section
       id="about"
