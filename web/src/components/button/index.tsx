@@ -6,16 +6,18 @@ import { HTMLAttributes } from 'react'
 
 import { clsx } from '~/utils/stykes'
 
-export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-  as?: LinkProps['as']
-  href?: LinkProps['href']
-  isNav?: boolean
-  prefetch?: LinkProps['prefetch']
-  replace?: LinkProps['replace']
-  scroll?: LinkProps['scroll']
-  shallow?: LinkProps['shallow']
-  type?: 'button' | 'submit' | 'reset'
-  variant?: 'default' | 'text'
+namespace Button {
+  export type Props = HTMLAttributes<HTMLButtonElement> & {
+    as?: LinkProps['as']
+    href?: LinkProps['href']
+    isNav?: boolean
+    prefetch?: LinkProps['prefetch']
+    replace?: LinkProps['replace']
+    scroll?: LinkProps['scroll']
+    shallow?: LinkProps['shallow']
+    type?: 'button' | 'submit' | 'reset'
+    variant?: 'default' | 'text'
+  }
 }
 
 export default function Button({
@@ -24,7 +26,7 @@ export default function Button({
   type = 'button',
   variant = 'default',
   ...props
-}: ButtonProps) {
+}: Button.Props) {
   const isActive = usePathname().startsWith(props.href?.toString() ?? '')
   const actualClassName = clsx(
     'flex items-center justify-center h-12 rounded-md px-4 transition-colors font-bold active:scale-[98%] active:filter active:brightness-[96%]',
