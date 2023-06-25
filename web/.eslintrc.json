@@ -1,0 +1,47 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "import-helpers",
+    "prettier"
+  ],
+  "rules": {
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        },
+        "groups": [
+          "module",
+          [
+            "/^~//"
+          ],
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "newlinesBetween": "always"
+      }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        "arrowParens": "always",
+        "printWidth": 100,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "vueIndentScriptAndStyle": true
+      }
+    ]
+  }
+}
