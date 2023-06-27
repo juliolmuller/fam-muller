@@ -1,11 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/components/**/*.{jsx,tsx,vue}',
-    './src/layouts/**/*.{jsx,tsx,vue}',
-    './src/pages/**/*.{jsx,tsx,vue}',
-  ],
+  content: ['./index.html', './src/**/*.vue'],
   theme: {
     container: {
       center: true,
