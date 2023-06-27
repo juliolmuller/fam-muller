@@ -29,6 +29,10 @@ export default {
           950: '#052e16',
         },
       },
+      fontFamily: {
+        sans: ['Montserrat', 'Roboto', 'sans-serif'],
+        brand: ['Pangolin', 'cursive'],
+      },
       minHeight: {
         screen: ['100vh', '100svh'],
       },
