@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import { Home } from '~/pages';
+import { HomeLayout } from '~/layouts';
+import { HomePage } from '~/pages';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: Home,
+    component: HomeLayout,
+    children: [
+      {
+        path: '/',
+        component: HomePage,
+      },
+    ],
   },
 ];
 
