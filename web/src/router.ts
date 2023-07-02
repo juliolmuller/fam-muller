@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import { HomeLayout } from '~/layouts';
-import { HomePage } from '~/pages';
+import { HomeLayout, PlatformLayout } from '~/layouts';
+import { FeedPage, GenealogyPage, HomePage, TimelinePage } from '~/pages';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -11,6 +11,24 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/',
         component: HomePage,
+      },
+    ],
+  },
+  {
+    path: '/*',
+    component: PlatformLayout,
+    children: [
+      {
+        path: '/feed',
+        component: FeedPage,
+      },
+      {
+        path: '/timeline',
+        component: TimelinePage,
+      },
+      {
+        path: '/genealogy',
+        component: GenealogyPage,
       },
     ],
   },
