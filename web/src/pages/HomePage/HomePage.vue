@@ -10,8 +10,6 @@ import { StatsSection } from './StatsSection';
       class="mx-auto"
       src="/img/watermill.png"
       alt="water mill illustration"
-      height="1180"
-      width="1180"
     />
 
     <AboutSection />
