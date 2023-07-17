@@ -5,9 +5,9 @@ import { Button } from '~/components';
 </script>
 
 <template>
-  <header class="flex items-center gap-4 border-b border-b-gray-200 bg-white px-8 py-4">
+  <header class="PlatformLayout-header">
     <RouterLink
-      class="mr-8 inline-flex items-center gap-4 font-brand text-3xl"
+      class="PlatformLayout-logo"
       to="/"
     >
       <img
@@ -44,7 +44,21 @@ import { Button } from '~/components';
     </Button>
   </header>
 
-  <main class="px-8">
+  <main class="PlatformLayout-content">
     <RouterView />
   </main>
 </template>
+
+<style scoped lang="scss">
+.PlatformLayout-header {
+  @apply flex items-center gap-4 border-b border-b-gray-200 bg-white px-8 py-4;
+
+  .PlatformLayout-logo {
+    @apply mr-8 inline-flex items-center gap-4 font-brand text-3xl;
+  }
+}
+
+.PlatformLayout-content {
+  @apply px-8;
+}
+</style>

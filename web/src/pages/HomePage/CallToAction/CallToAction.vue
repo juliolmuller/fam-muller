@@ -3,14 +3,23 @@ import { Button } from '~/components';
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-8 pb-16 pt-8">
-    <p class="text-center text-4xl font-bold text-brand-800">Acessar a pplataforma</p>
+  <div class="HomePage-CallToAction-root">
+    <p>Acessar a pplataforma</p>
 
-    <Button
-      class="px-8"
-      to="/feed"
-    >
-      Entrar ou Registrar-se
-    </Button>
+    <Button to="/feed"> Entrar ou Registrar-se </Button>
   </div>
 </template>
+
+<style scoped lang="scss">
+.HomePage-CallToAction-root {
+  @apply flex flex-col items-center gap-8 pb-16 pt-8;
+
+  p {
+    @apply text-center text-4xl font-bold text-brand-800;
+  }
+
+  button {
+    @apply px-8;
+  }
+}
+</style>

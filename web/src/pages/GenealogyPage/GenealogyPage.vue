@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex h-[60vh] flex-col justify-between lg:container">
-    <div class="text-4xl text-brand-800">Árvore Genealógica (em construção)</div>
+  <div class="GenealogyPage-root">
+    <div class="GenealogyPage-title">Árvore Genealógica (em construção)</div>
 
     <img
       class="self-center"
@@ -13,3 +13,13 @@
     />
   </div>
 </template>
+
+<style scoped lang="scss">
+.GenealogyPage-root {
+  @apply flex h-[60vh] flex-col justify-between lg:container;
+
+  .GenealogyPage-title {
+    @apply text-4xl text-brand-800;
+  }
+}
+</style>

@@ -29,11 +29,9 @@ const isMatching = computed(() => {
 
 const actualClasses = computed(() => {
   return clsx(
-    'flex items-center justify-center h-12 rounded-md px-4 transition-colors font-bold text-center active:scale-[98%] active:filter active:brightness-[96%]',
-    props.secondary
-      ? 'text-brand-800 hover:text-brand-900 hover:bg-gray-100'
-      : 'bg-brand-800 text-white hover:bg-brand-900',
-    props.isNav && !isMatching.value && 'font-normal text-gray-950 opacity-60 hover:opacity-100',
+    'Button-root',
+    props.secondary ? 'Button-secondary' : 'Button-primary',
+    props.isNav && !isMatching.value && 'Button-link Button-inactive',
     props.class,
   );
 });
@@ -67,3 +65,21 @@ const actualClasses = computed(() => {
     <slot />
   </button>
 </template>
+
+<style lang="scss">
+.Button-root {
+  @apply flex items-center justify-center h-12 rounded-md px-4 transition-colors font-bold text-center active:scale-[98%] active:filter active:brightness-[96%];
+
+  &.Button-primary {
+    @apply bg-brand-800 text-white hover:bg-brand-900;
+  }
+
+  &.Button-secondary {
+    @apply text-brand-800 hover:text-brand-900 hover:bg-gray-100;
+  }
+
+  &.Button-link.Button-inactive {
+    @apply font-normal text-gray-950 opacity-60 hover:opacity-100;
+  }
+}
+</style>
