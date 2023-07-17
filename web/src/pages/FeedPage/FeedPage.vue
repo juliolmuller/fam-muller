@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex h-[60vh] flex-col justify-between lg:container">
-    <div class="text-4xl text-brand-800">Feed (em construção)</div>
+  <div class="FeedPage-root">
+    <h1 class="FeedPage-title">Feed (em construção)</h1>
 
     <img
       class="self-center"
@@ -13,3 +13,13 @@
     />
   </div>
 </template>
+
+<style scoped lang="scss">
+.FeedPage-root {
+  @apply flex h-[60vh] flex-col justify-between lg:container;
+
+  .FeedPage-title {
+    @apply text-4xl text-brand-800;
+  }
+}
+</style>
