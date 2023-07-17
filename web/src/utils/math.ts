@@ -1,15 +1,15 @@
 function makeRoundingFunction(fn: (number: number) => number) {
   return (value: number, precision = 0) => {
-    const roundingFactor = Math.pow(10, precision)
-    const nonDecimalsValue = fn(value * roundingFactor)
-    const decimalsAdjustedValue = nonDecimalsValue / roundingFactor
+    const roundingFactor = Math.pow(10, precision);
+    const nonDecimalsValue = fn(value * roundingFactor);
+    const decimalsAdjustedValue = nonDecimalsValue / roundingFactor;
 
-    return decimalsAdjustedValue
-  }
+    return decimalsAdjustedValue;
+  };
 }
 
-export const round = makeRoundingFunction(Math.round)
+export const round = makeRoundingFunction(Math.round);
 
-export const floor = makeRoundingFunction(Math.floor)
+export const floor = makeRoundingFunction(Math.floor);
 
-export const ceiling = makeRoundingFunction(Math.ceil)
+export const ceiling = makeRoundingFunction(Math.ceil);

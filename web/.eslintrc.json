@@ -1,14 +1,16 @@
 {
+  "root": true,
   "extends": [
-    "next/core-web-vitals",
-    "@rocketseat/eslint-config/react"
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "@vue/typescript/recommended"
   ],
   "plugins": [
-    "import-helpers"
+    "@typescript-eslint",
+    "import-helpers",
+    "prettier"
   ],
   "rules": {
-    "@typescript-eslint/no-redeclare": "error",
-    "@typescript-eslint/no-unused-vars": "warn",
     "import-helpers/order-imports": [
       "warn",
       {
@@ -30,7 +32,20 @@
         "newlinesBetween": "always"
       }
     ],
-    "no-redeclare": "off",
-    "no-unused-vars": "off"
+    "prettier/prettier": [
+      "warn",
+      {
+        "arrowParens": "always",
+        "printWidth": 100,
+        "semi": true,
+        "singleAttributePerLine": true,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "vueIndentScriptAndStyle": false
+      }
+    ],
+    "vue/html-self-closing": "off", // handled by prettier
+    "vue/multi-word-component-names": "off",
+    "vue/singleline-html-element-content-newline": "off"
   }
 }

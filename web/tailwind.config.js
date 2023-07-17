@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+export default {
+  content: ['./index.html', './src/**/*.vue'],
   theme: {
     container: {
       center: true,
@@ -29,8 +25,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        brand: 'var(--font-pangolin)',
-        sans: 'var(--font-montserrat)',
+        sans: ['Montserrat', 'Roboto', 'sans-serif'],
+        brand: ['Pangolin', 'cursive'],
       },
       minHeight: {
         screen: ['100vh', '100svh'],
@@ -38,4 +34,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
