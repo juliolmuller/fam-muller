@@ -24,11 +24,11 @@ function truncateOverHundred(value: number) {
 <template>
   <section
     id="stats"
-    class="relative py-12"
+    class="HomePage-StatsSection-root"
   >
-    <header class="mb-10 text-center text-4xl lg:text-left">A História Sendo Escrita</header>
+    <header class="HomePage-StatsSection-header">A História Sendo Escrita</header>
 
-    <div class="flex flex-col-reverse items-center justify-around gap-8 lg:flex-row">
+    <div class="HomePage-StatsSection-body">
       <img
         src="/img/family-tree.svg"
         alt="ilustração de árvore genealógica"
@@ -36,17 +36,14 @@ function truncateOverHundred(value: number) {
         width="320"
       />
 
-      <dl class="grow flex flex-wrap items-center gap-y-4 max-w-2xl">
-        <dt
-          class="basis-1/6 text-brand-800"
-          aria-label="qunatidade de membros"
-        >
+      <dl>
+        <dt aria-label="qunatidade de membros">
           <UsersThreeIcon
             color="currentcolor"
             :size="72"
           />
         </dt>
-        <dd class="basis-4/5 pl-4 text-2xl">
+        <dd>
           <span class="whitespace-nowrap">
             <strong>{{ members ?? 0 }} membros</strong> registrados.
           </span>
@@ -55,29 +52,23 @@ function truncateOverHundred(value: number) {
           </span>
         </dd>
 
-        <dt
-          class="basis-1/6 text-brand-800"
-          aria-label="quantidade de fotos"
-        >
+        <dt aria-label="quantidade de fotos">
           <ImagesSquareIcon
             color="currentcolor"
             :size="72"
           />
         </dt>
-        <dd class="basis-4/5 pl-4 text-2xl">
+        <dd>
           <strong>{{ truncateOverHundred(photos) }} fotos</strong> publicadas
         </dd>
 
-        <dt
-          class="basis-1/6 text-brand-800"
-          aria-label="Number of users"
-        >
+        <dt aria-label="Number of users">
           <ScrollIcon
             color="currentcolor"
             :size="72"
           />
         </dt>
-        <dd class="basis-4/5 pl-4 text-2xl">
+        <dd>
           <strong>{{ truncateOverHundred(documents + medias) }}</strong> documentos, relatos e
           vídeos
         </dd>
@@ -85,3 +76,29 @@ function truncateOverHundred(value: number) {
     </div>
   </section>
 </template>
+
+<style scoped lang="scss">
+.HomePage-StatsSection-root {
+  @apply relative py-12;
+}
+
+.HomePage-StatsSection-header {
+  @apply mb-10 text-center text-4xl lg:text-left;
+}
+
+.HomePage-StatsSection-body {
+  @apply flex flex-col-reverse items-center justify-around gap-8 lg:flex-row;
+
+  dl {
+    @apply grow flex flex-wrap items-center gap-y-8 max-w-2xl;
+
+    dt {
+      @apply basis-1/6 text-brand-800;
+    }
+
+    dd {
+      @apply basis-4/5 pl-4 text-2xl;
+    }
+  }
+}
+</style>
