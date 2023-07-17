@@ -5,10 +5,10 @@ import { Button } from '~/components';
 </script>
 
 <template>
-  <div class="flex-1 lg:container">
-    <header class="flex items-center justify-between gap-4 p-4 md:py-8">
+  <div class="HomeLayout-root">
+    <header class="HomeLayout-header">
       <RouterLink
-        class="inline-flex items-center gap-4 font-brand text-5xl"
+        class="logo"
         to="/"
       >
         <img
@@ -20,7 +20,7 @@ import { Button } from '~/components';
         Müller
       </RouterLink>
 
-      <div class="flex items-center gap-4">
+      <div class="HomeLayout-nav">
         <Button
           secondary
           href="#about"
@@ -39,8 +39,30 @@ import { Button } from '~/components';
       </div>
     </header>
 
-    <main class="px-4">
+    <main class="HomeLayout-content">
       <RouterView />
     </main>
   </div>
 </template>
+
+<style scoped lang="scss">
+.HomeLayout-root {
+  @apply flex-1 lg:container;
+}
+
+.HomeLayout-header {
+  @apply flex items-center justify-between gap-4 p-4 md:py-8;
+
+  .HomeLayout-logo {
+    @apply inline-flex items-center gap-4 font-brand text-5xl;
+  }
+
+  .HomeLayout-nav {
+    @apply flex items-center gap-4;
+  }
+}
+
+.HomeLayout-content {
+  @apply px-4;
+}
+</style>
