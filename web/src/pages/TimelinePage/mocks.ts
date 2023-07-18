@@ -97,7 +97,7 @@ const getRandomPhotos = (count = 1): TimelineEventAttachment[] => {
       id: genRandomId(),
       name: 'photo',
       type: 'image',
-      url: 'https://picsum.photos/200',
+      url: `https://picsum.photos/seed/${genRandomId()}/200`,
     }));
 };
 
@@ -110,7 +110,7 @@ export const mockedEvents: TimelineEvent[] = [
     startDate: new Date(1899, 5, 20),
     endDate: null,
     markedPeople: getRandomUsers(2),
-    attachments: getRandomPhotos(2),
+    attachments: getRandomPhotos(5),
   },
   {
     id: genRandomId(),
@@ -120,7 +120,7 @@ export const mockedEvents: TimelineEvent[] = [
     startDate: new Date(1914, 8, 13),
     endDate: null,
     markedPeople: getRandomUsers(),
-    attachments: getRandomPhotos(5),
+    attachments: getRandomPhotos(12),
   },
   {
     id: genRandomId(),
@@ -130,7 +130,7 @@ export const mockedEvents: TimelineEvent[] = [
     startDate: new Date(1918, 2, 15),
     endDate: null,
     markedPeople: getRandomUsers(),
-    attachments: getRandomPhotos(4),
+    attachments: getRandomPhotos(20),
   },
   {
     id: genRandomId(),
@@ -150,7 +150,7 @@ export const mockedEvents: TimelineEvent[] = [
     startDate: new Date(1966, 2, 26),
     endDate: null,
     markedPeople: getRandomUsers(3),
-    attachments: getRandomPhotos(3),
+    attachments: getRandomPhotos(4),
   },
   {
     id: genRandomId(),
@@ -160,6 +160,6 @@ export const mockedEvents: TimelineEvent[] = [
     startDate: new Date(1967, 4, 23),
     endDate: null,
     markedPeople: getRandomUsers(6),
-    attachments: getRandomPhotos(2),
+    attachments: getRandomPhotos(6),
   },
 ];
