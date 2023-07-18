@@ -54,7 +54,7 @@ function formatDate(date: Date) {
 
 <style scoped lang="scss">
 .TimelinePage-root {
-  @apply flex h-[60vh] flex-col gap-8 lg:container;
+  @apply flex min-h-[60vh] flex-col gap-8 lg:container;
 }
 
 .TimelinePage-header {
@@ -66,7 +66,7 @@ function formatDate(date: Date) {
 }
 
 .TimelinePage-body {
-  @apply px-8;
+  @apply lg:px-8;
 
   li {
     @apply relative flex flex-col pl-8 pb-8;
@@ -86,7 +86,7 @@ function formatDate(date: Date) {
     }
 
     &:last-of-type::after {
-      @apply rounded-b-full;
+      @apply bottom-8 rounded-b-full;
     }
 
     time {
