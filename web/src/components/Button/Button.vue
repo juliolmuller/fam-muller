@@ -9,6 +9,7 @@ export interface ButtonProps extends /* @vue-ignore */ ButtonHTMLAttributes {
   isNav?: boolean;
   to?: RouterLinkProps['to'];
   secondary?: boolean;
+  type?: ButtonHTMLAttributes['type'];
 }
 
 export interface ButtonSlots {
